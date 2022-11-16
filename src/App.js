@@ -1,10 +1,11 @@
 import { hot } from 'react-hot-loader/root';
 import React from 'react';
+import PokeApi from './PokeApi';
 import 'App.css';
 const App = () => (
-  <div>
-    <h1>Is this finally working?</h1>
-  </div>
+  <>
+    <PokeApi />
+  </>
 );
 
 export default hot(App);

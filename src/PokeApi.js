@@ -6,14 +6,12 @@ const PokeApi = () => {
   const [name, setName] = useState('');
   const [find, setFind] = useState('pikachu');
   const [img, setImg] = useState('');
-  const [type, setType] = useState('');
 
   useEffect(() => {
     async function getData() {
       let res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${find}`);
       console.log(res);
       setImg(res.data.sprites.front_default);
-      setType(res.data.types[0].type.name);
     }
     getData();
   }, [find]);
@@ -31,8 +29,7 @@ const PokeApi = () => {
     <Container>
       <Wrapper>
         <img src={img} alt="" />
-        <div>{find.toUpperCase()}</div>
-        <div>{type}</div>
+        <h1>{find.toUpperCase()}</h1>
         <input type="text" onChange={Typename} value={name} />
         <Button onClick={Search}>Search</Button>
       </Wrapper>
@@ -60,6 +57,10 @@ const Wrapper = styled.div`
     22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
     41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
     100px 100px 80px rgba(0, 0, 0, 0.07);
+  h1 {
+    text-align: center;
+    color: #ffde00;
+  }
 `;
 
 const Button = styled.div`

@@ -28,14 +28,25 @@ const PokeApi = () => {
   return (
     <Container>
       <Wrapper>
-        <img src={img} alt="" />
+        <img src={img} alt="img" />
         <h1>{find.toUpperCase()}</h1>
-        <input type="text" onChange={Typename} value={name} />
+        <Input
+          type="text"
+          onChange={Typename}
+          value={name}
+          placeholder="Whos that pokemon?!"
+        />
         <Button onClick={Search}>Search</Button>
       </Wrapper>
     </Container>
   );
 };
+
+const Input = styled.input`
+  width: 100%;
+  height: 30px;
+  border: none;
+`;
 
 const Container = styled.div`
   min-height: 100vh;
